@@ -30,16 +30,24 @@ Durante o curso e o desenvolvimento do projeto, os seguintes pilares e práticas
 
 ```text
 python-programacao-orientada-objetos/
-├── app.py                # Script principal: executa a lógica do menu e interações
+├── app.py                      # Script principal: executa a lógica do menu e interações
 ├── modelos/
-│   ├── restaurante.py    # Contém a classe Restaurante
-│   └── avaliacao.py      # Contém a classe Avaliacao
-└── README.md             # Este arquivo de documentação
+│   ├── __init__.py             # Arquivo vazio que define o pacote
+│   ├── avaliacao.py            # Contém a classe Avaliacao
+│   ├── restaurante.py          # Contém a classe Restaurante
+│   └── cardapio/
+│       ├── __init__.py         # Arquivo vazio que define o subpacote
+│       ├── item_cardapio.py    # Classe base para itens de cardápio
+│       ├── prato.py            # Define a classe Prato (herda de ItemCardapio)
+│       └── bebida.py           # Define a classe Bebida (herda de ItemCardapio)
+└── README.md                   # Este arquivo de documentação
 ```
 
-- `restaurante.py`: classe `Restaurante`, com atributos como nome, categoria, ativo e avaliações, além dos métodos de comportamento.  
-- `avaliacao.py`: classe `Avaliacao`, responsável por representar e validar as notas dos restaurantes.  
-- `app.py`: interface de linha de comando que permite interagir com o sistema.
+- `restaurante.py`: define a classe `Restaurante`, com atributos como nome, categoria, status e avaliações.  
+- `avaliacao.py`: define a classe `Avaliacao`, que representa e valida as notas atribuídas.  
+- `item_cardapio.py`: classe base para os itens do cardápio, como pratos e bebidas.  
+- `prato.py` e `bebida.py`: subclasses de `ItemCardapio` que representam pratos e bebidas, respectivamente.  
+- `__init__.py`: arquivos vazios usados para indicar que as pastas são pacotes Python válidos.
 
 ## ▶️ Como Executar
 
@@ -55,7 +63,7 @@ cd python-programacao-orientada-objetos
 ```bash
 python -m venv venv
 source venv/bin/activate     # Linux/macOS
-venv\Scripts\activate      # Windows
+venv\Scriptsctivate        # Windows
 ```
 
 3. Execute o programa:
